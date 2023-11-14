@@ -28,8 +28,11 @@ class MainTabBarContoller: UITabBarController {
     func configureViewController() {
         view.backgroundColor = .brown
         
+        // FeedController는 ViewController가 아닌 UICollectionViewController이기 때문에 collectionViewLayout을 통해 한 번 변환? 시켜줘야함.
+        let layout = UICollectionViewFlowLayout()
+        
         // #imageLiteral()하면 더블 클릭으로 이미지를 선택할 수 있음
-        let feed = tabBarNavigationController(unSelected: #imageLiteral(resourceName: "home_unselected"), selected: #imageLiteral(resourceName: "home_selected"), view: FeedController(), title: "Home")
+        let feed = tabBarNavigationController(unSelected: #imageLiteral(resourceName: "home_unselected"), selected: #imageLiteral(resourceName: "home_selected"), view: FeedController(collectionViewLayout: layout), title: "Home")
         let noty = tabBarNavigationController(unSelected: #imageLiteral(resourceName: "love"), selected: #imageLiteral(resourceName: "like_selected"), view: NotificationController(), title: "Notification")
         let imageSelector = tabBarNavigationController(unSelected: #imageLiteral(resourceName: "plus_unselected"), selected: #imageLiteral(resourceName: "add2"), view: ImageSelectionController(), title: "Image")
         let search = tabBarNavigationController(unSelected: #imageLiteral(resourceName: "search_unselected"), selected: #imageLiteral(resourceName: "search_selected"), view: SearchController(), title: "Search")
@@ -49,3 +52,6 @@ class MainTabBarContoller: UITabBarController {
         return nav
     }
 }
+
+// MARK: Note
+// 1. ViewController가 아닌 UICollectionViewController를 상속받은 Controller는 collectionViewLayout을 통해 한번 변환? 시켜준다
