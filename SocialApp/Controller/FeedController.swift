@@ -29,7 +29,8 @@ class FeedController: UICollectionViewController {
     func configureUI() {
         view.backgroundColor = .yellow
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        // 23-11-15 UICollectionViewCell -> FeedCell로 수정
+        collectionView.register(FeedCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
 }
 
@@ -40,8 +41,8 @@ extension FeedController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        cell.backgroundColor = .blue
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FeedCell
+        
         return cell
     }
 }
@@ -49,7 +50,7 @@ extension FeedController {
 extension FeedController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = view.frame.width
-        var height = width
+        let height = width
         return CGSize(width: width, height: height)
     }
 }
