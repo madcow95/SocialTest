@@ -38,21 +38,48 @@ class FeedCell: UICollectionViewCell {
         return fd
     }()
     
+    private lazy var likeButton: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(named: "love"), for: .normal)
+        btn.tintColor = .black
+        return btn
+    }()
+    
+    private lazy var captionButton: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(named: "speech-bubble"), for: .normal)
+        btn.tintColor = .black
+        return btn
+    }()
+    
+    private lazy var shareButton: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(named: "send"), for: .normal)
+        btn.tintColor = .black
+        return btn
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .lightGray
+        backgroundColor = .white
         
+        // Profile Image
         addSubview(profileImageView) // addSubView 이후에는 layout을 '반드시' 잡아줘야한다.
         let widthAndHeight = 40.0
         profileImageView.setDimension(height: widthAndHeight, width: widthAndHeight)
         profileImageView.layer.cornerRadius = widthAndHeight / 2 // 정사각형 / 2는 원이다.
         
+        // User Name Label
         addSubview(userName)
         userName.centerY(inView: profileImageView, leftAnchor: profileImageView.rightAnchor, paddingLeft: 10)
         
+        // Feed Image
         addSubview(feedImage)
         feedImage.anchor(top: profileImageView.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 8)
         feedImage.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 1).isActive = true
+        
+        // Like Button, Caption Button, Share Button
+        configureButtons()
     }
     
     // 아직까지는 굳이 알아둘 필요는 없다..?
@@ -64,5 +91,14 @@ class FeedCell: UICollectionViewCell {
     @objc func tabbed() {
         // TODO: 해당 user의 홈 피드로 이동
         print("tabbed!!")
+    }
+    
+    func configureButtons() {
+        let stackView = UIStackView(arrangedSubviews: [likeButton, captionButton, shareButton])
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        
+        addSubview(stackView)
+        stackView.anchor(top: feedImage.bottomAnchor, width: 100, height: 80)
     }
 }
