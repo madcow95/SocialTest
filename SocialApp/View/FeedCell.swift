@@ -59,6 +59,30 @@ class FeedCell: UICollectionViewCell {
         return btn
     }()
     
+    private let likesLabel: UILabel = {
+        let lb = UILabel()
+        lb.text = "7 Likes"
+        lb.font = UIFont.boldSystemFont(ofSize: 13)
+        lb.textColor = .black
+        return lb
+    }()
+    
+    private let captionLabel: UILabel = {
+        let lb = UILabel()
+        lb.text = "빨리 퇴사하고싶다."
+        lb.font = UIFont.boldSystemFont(ofSize: 13)
+        lb.textColor = .black
+        return lb
+    }()
+    
+    private let timeLabel: UILabel = {
+        let lb = UILabel()
+        lb.text = "2 months later"
+        lb.font = UIFont.boldSystemFont(ofSize: 13)
+        lb.textColor = .black
+        return lb
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
@@ -80,6 +104,18 @@ class FeedCell: UICollectionViewCell {
         
         // Like Button, Caption Button, Share Button
         configureButtons()
+        
+        // Likes Count Label
+        addSubview(likesLabel)
+        likesLabel.anchor(top: likeButton.bottomAnchor, left: leftAnchor, paddingTop: -4, paddingLeft: 8)
+        
+        // Caption Label
+        addSubview(captionLabel)
+        captionLabel.anchor(top: likesLabel.bottomAnchor, left: leftAnchor, paddingTop: 8, paddingLeft: 8)
+        
+        // Upload Date Label
+        addSubview(timeLabel)
+        timeLabel.anchor(top: captionLabel.bottomAnchor, left: leftAnchor, paddingTop: 8, paddingLeft: 8)
     }
     
     // 아직까지는 굳이 알아둘 필요는 없다..?
@@ -99,6 +135,6 @@ class FeedCell: UICollectionViewCell {
         stackView.distribution = .fillEqually
         
         addSubview(stackView)
-        stackView.anchor(top: feedImage.bottomAnchor, width: 100, height: 80)
+        stackView.anchor(top: feedImage.bottomAnchor, width: 120, height: 50)
     }
 }
