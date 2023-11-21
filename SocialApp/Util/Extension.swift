@@ -63,6 +63,19 @@ extension UIView {
         }
     }
     
+    // UIView의 X축 위치를 맞추기 위한 함수
+    func centerX(inView: UIView,
+                 topAnchor: NSLayoutYAxisAnchor? = nil,
+                 paddingTop: CGFloat? = 0) {
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        centerXAnchor.constraint(equalTo: inView.centerXAnchor).isActive = true
+        
+        if let topAnchor = topAnchor {
+            self.topAnchor.constraint(equalTo: topAnchor, constant: paddingTop!).isActive = true
+        }
+    }
+    
     // 직사각형의 width, height를 설정할 수 있는 함수?
     func setDimension(height: CGFloat, width: CGFloat) {
         translatesAutoresizingMaskIntoConstraints = false
