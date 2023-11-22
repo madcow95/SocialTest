@@ -89,6 +89,8 @@ class LoginViewController: UIViewController {
         stackView.anchor(top: mainIcon.bottomAnchor,
                          left: view.leftAnchor,
                          right: view.rightAnchor,
-                         paddingTop: 30)
+                         paddingTop: 30, 
+                         paddingLeft: 30,
+                         paddingRight: -30)
     }
 }
