@@ -17,29 +17,33 @@ class LoginViewController: UIViewController {
         return mi
     }()
     
-    private let emailTextField: UITextField = {
-        let et = UITextField()
-        et.layer.cornerRadius = 10
-        et.borderStyle = .none
-        et.textColor = .white
-        et.keyboardAppearance = .dark // 바로 키보드를 나오게 함.
-        et.keyboardType = .emailAddress // 보여지는 키보드의 형식
-        et.backgroundColor = UIColor(white: 1, alpha: 0.1) // 투명도 표시?
-        et.setHeight(50)
-        et.attributedPlaceholder = NSAttributedString(string: "\t이메일", attributes: [.foregroundColor: UIColor(white: 1, alpha: 0.8)])
+    private let emailTextField: CustomTextField = {
+//        let et = CustomTextField()
+        let et = CustomTextField(placeHolder: "이메일")
+        et.keyboardType = .emailAddress
+//        et.layer.cornerRadius = 10
+//        et.borderStyle = .none
+//        et.textColor = .white
+//        et.keyboardAppearance = .dark // 바로 키보드를 나오게 함.
+//        et.keyboardType = .emailAddress // 보여지는 키보드의 형식
+//        et.backgroundColor = UIColor(white: 1, alpha: 0.1) // 투명도 표시?
+//        et.setHeight(50)
+//        et.attributedPlaceholder = NSAttributedString(string: "\t이메일", attributes: [.foregroundColor: UIColor(white: 1, alpha: 0.8)])
         return et
     }()
     
-    private let passwordTextField: UITextField = {
-        let pt = UITextField()
-        pt.layer.cornerRadius = 10
-        pt.borderStyle = .none
-        pt.textColor = .white
-        pt.keyboardAppearance = .dark
-        pt.backgroundColor = UIColor(white: 1, alpha: 0.1)
-        pt.setHeight(50)
-        pt.isSecureTextEntry = true // 비밀번호 설정, 복사/붙여넣기 등등 막힘
-        pt.attributedPlaceholder = NSAttributedString(string: "\t비밀번호", attributes: [.foregroundColor: UIColor(white: 1, alpha: 0.8)])
+    private let passwordTextField: CustomTextField = {
+//        let pt = UITextField()
+        let pt = CustomTextField(placeHolder: "비밀번호")
+        pt.isSecureTextEntry = true
+//        pt.layer.cornerRadius = 10
+//        pt.borderStyle = .none
+//        pt.textColor = .white
+//        pt.keyboardAppearance = .dark
+//        pt.backgroundColor = UIColor(white: 1, alpha: 0.1)
+//        pt.setHeight(50)
+//        pt.isSecureTextEntry = true // 비밀번호 설정, 복사/붙여넣기 등등 막힘
+//        pt.attributedPlaceholder = NSAttributedString(string: "\t비밀번호", attributes: [.foregroundColor: UIColor(white: 1, alpha: 0.8)])
         return pt
     }()
     
@@ -63,7 +67,7 @@ class LoginViewController: UIViewController {
     
     private let newAccount: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setAttributedTitle(firstPart: "계정이 없으신가요?", secondPart: "회원가입")
+        btn.setAttributedTitle(firstPart: "계정이 없으신가요? ", secondPart: "회원가입")
         btn.addTarget(self, action: #selector(handleNewAccount), for: .touchUpInside)
         return btn
     }()
