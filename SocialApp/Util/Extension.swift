@@ -102,3 +102,15 @@ extension UIView {
         anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
     }
 }
+
+extension UIButton {
+    func setAttributedTitle(firstPart: String, secondPart: String) {
+        let attr: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.9), .font: UIFont.systemFont(ofSize: 16)]
+        let title = NSMutableAttributedString(string: "\(firstPart)", attributes: attr)
+        
+        let boldStyle: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.9), .font: UIFont.boldSystemFont(ofSize: 16)]
+        title.append(NSAttributedString(string: secondPart, attributes: boldStyle))
+        
+        setAttributedTitle(title, for: .normal)
+    }
+}

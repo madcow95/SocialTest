@@ -54,6 +54,20 @@ class LoginViewController: UIViewController {
         return btn
     }()
     
+    private let forgotPasswordBtn: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setAttributedTitle(firstPart: "비밀번호를 잊으셨나요? ", secondPart: "비밀번호 재발급")
+        btn.addTarget(self, action: #selector(handleResetPassword), for: .touchUpInside)
+        return btn
+    }()
+    
+    private let newAccount: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setAttributedTitle(firstPart: "계정이 없으신가요?", secondPart: "회원가입")
+        btn.addTarget(self, action: #selector(handleNewAccount), for: .touchUpInside)
+        return btn
+    }()
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +94,7 @@ class LoginViewController: UIViewController {
         mainIcon.setDimension(height: 60, width: 80)
         mainIcon.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 30)
         
-        let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, loginBtn])
+        let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, loginBtn, forgotPasswordBtn])
         stackView.axis = .vertical
         stackView.spacing = 20
         
@@ -89,8 +103,21 @@ class LoginViewController: UIViewController {
         stackView.anchor(top: mainIcon.bottomAnchor,
                          left: view.leftAnchor,
                          right: view.rightAnchor,
-                         paddingTop: 30, 
+                         paddingTop: 30,
                          paddingLeft: 30,
                          paddingRight: -30)
+        
+        view.addSubview(newAccount)
+        newAccount.centerX(inView: view)
+        newAccount.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
+    }
+    
+    // MARK: - Actions
+    @objc func handleResetPassword() {
+        print("DEBUG: Tapped forgot button")
+    }
+    
+    @objc func handleNewAccount() {
+        
     }
 }

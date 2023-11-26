@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CD0495A62B04F360005AF87A /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0495A52B04F360005AF87A /* FeedCell.swift */; };
+		CD1C40962B133EDC00027C0E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C40952B133EDC00027C0E /* CustomTextField.swift */; };
 		CD532F752B03A53B001104FC /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD532F742B03A53B001104FC /* Extension.swift */; };
 		CD5420562B0CF43D00AEEC39 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5420552B0CF43D00AEEC39 /* LoginViewController.swift */; };
 		CD5420582B0CF45A00AEEC39 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5420572B0CF45A00AEEC39 /* SignUpController.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		CD0495A52B04F360005AF87A /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		CD1C40952B133EDC00027C0E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		CD532F742B03A53B001104FC /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		CD5420552B0CF43D00AEEC39 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CD5420572B0CF45A00AEEC39 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD1C40942B133ECA00027C0E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CD1C40952B133EDC00027C0E /* CustomTextField.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		CD5420542B0CF40E00AEEC39 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +95,7 @@
 		CD7BFD892AFBC87E00339E2B /* SocialApp */ = {
 			isa = PBXGroup;
 			children = (
+				CD1C40942B133ECA00027C0E /* Profile */,
 				CD98C75D2B011BFB00EEA27F /* Controller */,
 				CD98C75C2B011B6300EEA27F /* Util */,
 				CD98C75B2B011B5900EEA27F /* API */,
@@ -224,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD1C40962B133EDC00027C0E /* CustomTextField.swift in Sources */,
 				CD5420582B0CF45A00AEEC39 /* SignUpController.swift in Sources */,
 				CD5420562B0CF43D00AEEC39 /* LoginViewController.swift in Sources */,
 				CD98C7632B0251D600EEA27F /* NotificationController.swift in Sources */,
