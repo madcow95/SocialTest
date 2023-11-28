@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
 //        window?.rootViewController = MainTabBarContoller()
-        window?.rootViewController = UINavigationController(rootViewController: LoginViewController()) // 한 View에서 다른 View로 넘어갈 일이 있기 때문에 Navigation으로 해줌
+        window?.rootViewController = UINavigationController(rootViewController: SignUPViewController()) // 한 View에서 다른 View로 넘어갈 일이 있기 때문에 Navigation으로 해줌
         window?.makeKeyAndVisible()
     }
 
