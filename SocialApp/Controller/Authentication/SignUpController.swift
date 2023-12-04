@@ -38,7 +38,7 @@ class SignUPViewController: UIViewController {
     }()
     
     private let fullNameTextField = CustomTextField(placeHolder: "Full Name")
-    private let nickNameTextField = CustomTextField(placeHolder: "NickName")
+    private let nickNameTextField = CustomTextField(placeHolder: "Nick Name")
     
     // 회원가입 버튼
     private let signUpButton: UIButton = {
@@ -55,6 +55,15 @@ class SignUPViewController: UIViewController {
         return btn
     }()
     
+    private let returnToLogin: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setAttributedTitle(firstPart: "이미 아이디가 있으신가요?", secondPart: " 로그인 하러가기")
+        btn.addTarget(self, action: #selector(returnToLoginView), for: .touchUpInside)
+        return btn
+    }()
+    
+    // TODO: 1. 남,여 radio button    
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,10 +75,19 @@ class SignUPViewController: UIViewController {
     
     // MARK: - Helpers
     func configureUI() {
+        view.backgroundColor = .cyan
+        navigationController?.navigationBar.barStyle = .black
+        
+        configureGradientLayer()
+        
         view.addSubview(addProfilePhotoButton)
         addProfilePhotoButton.centerX(inView: view)
         addProfilePhotoButton.setDimension(height: 130, width: 130)
         addProfilePhotoButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 30)
+        
+        view.addSubview(returnToLogin)
+        returnToLogin.centerX(inView: view)
+        returnToLogin.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
         
         let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, fullNameTextField, nickNameTextField, signUpButton])
         stackView.axis = .vertical
@@ -86,6 +104,11 @@ class SignUPViewController: UIViewController {
     }
     
     @objc func signUpAction() {
-        print("DEBUG: signup Button Tapped!!@@!!")
+        print("DEBUG: signup Button Tapped!!!!")
+    }
+    
+    @objc func returnToLoginView() {
+        let controller: UIViewController = LoginViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
