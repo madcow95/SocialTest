@@ -24,6 +24,7 @@
 		CD98C7652B0251F600EEA27F /* ImageSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98C7642B0251F600EEA27F /* ImageSelectionController.swift */; };
 		CD98C7672B02522A00EEA27F /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98C7662B02522A00EEA27F /* SearchController.swift */; };
 		CD98C7692B02526E00EEA27F /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98C7682B02526E00EEA27F /* ProfileController.swift */; };
+		CDB403552B20B0F00093508B /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB403542B20B0F00093508B /* AuthenticationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		CD98C7642B0251F600EEA27F /* ImageSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionController.swift; sourceTree = "<group>"; };
 		CD98C7662B02522A00EEA27F /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		CD98C7682B02526E00EEA27F /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		CDB403542B20B0F00093508B /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 		CD98C75A2B011B4900EEA27F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CDB403542B20B0F00093508B /* AuthenticationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				CD98C7632B0251D600EEA27F /* NotificationController.swift in Sources */,
 				CD7BFD8F2AFBC87E00339E2B /* ViewController.swift in Sources */,
 				CD7BFD8B2AFBC87E00339E2B /* AppDelegate.swift in Sources */,
+				CDB403552B20B0F00093508B /* AuthenticationViewModel.swift in Sources */,
 				CD98C7672B02522A00EEA27F /* SearchController.swift in Sources */,
 				CD0495A62B04F360005AF87A /* FeedCell.swift in Sources */,
 				CD98C7612B0251C000EEA27F /* FeedController.swift in Sources */,

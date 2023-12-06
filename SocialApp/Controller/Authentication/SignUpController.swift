@@ -10,6 +10,9 @@ import UIKit
 class SignUPViewController: UIViewController {
     
     // MARK: - Properties
+    
+    private var authVM = SignupViewModel()
+    
     // 프로필 이미지 등록 Button
     private let addProfilePhotoButton: UIButton = {
         let btn = UIButton(type: .system)
@@ -79,6 +82,7 @@ class SignUPViewController: UIViewController {
         navigationController?.navigationBar.barStyle = .black
         
         configureGradientLayer()
+        configureObservers()
         
         view.addSubview(addProfilePhotoButton)
         addProfilePhotoButton.centerX(inView: view)
@@ -97,6 +101,12 @@ class SignUPViewController: UIViewController {
         stackView.anchor(top: addProfilePhotoButton.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 30, paddingLeft: 30, paddingRight: -30)
     }
     
+    func configureObservers() {
+        emailTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
+        fullNameTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
+        nickNameTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
+    }
     
     // MARK: - Actions
     @objc func handleProfile() {
@@ -110,5 +120,17 @@ class SignUPViewController: UIViewController {
     @objc func returnToLoginView() {
         let controller: UIViewController = LoginViewController()
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func textChanged(sender: UITextField) {
+        if sender == emailTextField {
+            authVM.email = emailTextField.text
+        } else if sender == passwordTextField {
+            authVM.password = passwordTextField.text
+        } else if sender == fullNameTextField {
+            authVM.fullName = fullNameTextField.text
+        } else if sender == nickNameTextField {
+            authVM.nickName = nickNameTextField.text
+        }
     }
 }
