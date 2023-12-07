@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUPViewController: UIViewController {
+class SignUpViewController: UIViewController {
     
     // MARK: - Properties
     
@@ -49,9 +49,9 @@ class SignUPViewController: UIViewController {
         btn.setHeight(50)
         btn.setTitle("회원가입", for: .normal)
         btn.setTitleColor(.white, for: .normal)
-        btn.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1).withAlphaComponent(0.8)
+        btn.backgroundColor = .lightGray.withAlphaComponent(0.5)
         btn.layer.cornerRadius = 10
-        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+//        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         btn.addTarget(self, action: #selector(signUpAction), for: .touchUpInside)
         btn.isEnabled = false
         
@@ -114,7 +114,10 @@ class SignUPViewController: UIViewController {
     }
     
     @objc func signUpAction() {
-        print("DEBUG: signup Button Tapped!!!!")
+        print("email >>> \(emailTextField.text!)")
+        print("password >>> \(passwordTextField.text!)")
+        print("full Name >>> \(fullNameTextField.text!)")
+        print("nick name >>> \(nickNameTextField.text!)")
     }
     
     @objc func returnToLoginView() {
@@ -132,5 +135,15 @@ class SignUPViewController: UIViewController {
         } else if sender == nickNameTextField {
             authVM.nickName = nickNameTextField.text
         }
+        
+        updateForm()
+    }
+}
+
+extension SignUpViewController: FormViewModel {
+    func updateForm() {
+        signUpButton.backgroundColor = authVM.buttonBackgoundColor
+        signUpButton.setTitleColor(authVM.buttonTitleColor, for: .normal)
+        signUpButton.isEnabled = authVM.formIsValid
     }
 }

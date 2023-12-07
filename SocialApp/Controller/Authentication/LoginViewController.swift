@@ -10,6 +10,9 @@ import UIKit
 class LoginViewController: UIViewController {
     
     // MARK: - Properties
+    
+    private var loginViewModel = LoginViewModel()
+    
     private let mainIcon: UIImageView = {
         let mi = UIImageView(image: #imageLiteral(resourceName: "Instagram_PNG-Logo-Oksdf"))
         mi.contentMode = .scaleAspectFill // TODO: - contentMode 자세히 알아봐야할거같다.
@@ -51,10 +54,12 @@ class LoginViewController: UIViewController {
         let btn = UIButton(type: .system)
         btn.setTitle("로그인", for: .normal)
         btn.setTitleColor(.white, for: .normal)
-        btn.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        btn.backgroundColor = .lightGray.withAlphaComponent(0.5)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold) // font가 아닌 titleLabel부터
         btn.layer.cornerRadius = 10
+        btn.isEnabled = false
         btn.setHeight(50)
+        btn.addTarget(self, action: #selector(loginAction), for: .touchUpInside)
         return btn
     }()
     
@@ -86,6 +91,7 @@ class LoginViewController: UIViewController {
         // view.backgroundColor = .brown
         // 그라데이션
         configureGradientLayer()
+        configureObservers()
         
         navigationController?.navigationBar.barStyle = .black
         
@@ -112,13 +118,41 @@ class LoginViewController: UIViewController {
         newAccount.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
     }
     
+    func configureObservers() {
+        emailTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
+    }
+    
     // MARK: - Actions
     @objc func handleResetPassword() {
         print("DEBUG: Tapped forgot button")
     }
     
     @objc func handleNewAccount() {
-        let controller: UIViewController = SignUPViewController()
+        let controller: UIViewController = SignUpViewController()
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func loginAction() {
+        print("DEBUG: email >>> \(emailTextField.text!)")
+        print("DEBUG: password >>> \(passwordTextField.text!)")
+    }
+    
+    @objc func textChanged(sender: UITextField) {
+        if sender == emailTextField {
+            loginViewModel.email = emailTextField.text
+        } else if sender == passwordTextField {
+            loginViewModel.password = passwordTextField.text
+        }
+        
+        updateForm()
+    }
+}
+
+extension LoginViewController: FormViewModel {
+    func updateForm() {
+        loginBtn.backgroundColor = loginViewModel.buttonBackgoundColor
+        loginBtn.setTitleColor(loginViewModel.buttonTitleColor, for: .normal)
+        loginBtn.isEnabled = loginViewModel.formIsValid
     }
 }
