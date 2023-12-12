@@ -12,6 +12,7 @@ class SignUpViewController: UIViewController {
     // MARK: - Properties
     
     private var authVM = SignupViewModel()
+    private var profileImage: UIImage?
     
     // 프로필 이미지 등록 Button
     private let addProfilePhotoButton: UIButton = {
@@ -110,7 +111,13 @@ class SignUpViewController: UIViewController {
     
     // MARK: - Actions
     @objc func handleProfile() {
-        print("DEBUG: addProfilePhotoButton Tapped!!!")
+        let selectPhoto = UIImagePickerController() // 사용자의 사진첩?에서 사진이나 영상을 가져오는 Controller(OOTB)
+        // object에 연결을 시키기 위함?
+        selectPhoto.delegate = self
+        // 영상, 사진 등을 수정할수있게 권한을 부여?
+        selectPhoto.allowsEditing = true
+        
+        present(selectPhoto, animated: true, completion: nil)
     }
     
     @objc func signUpAction() {
@@ -145,5 +152,26 @@ extension SignUpViewController: FormViewModel {
         signUpButton.backgroundColor = authVM.buttonBackgoundColor
         signUpButton.setTitleColor(authVM.buttonTitleColor, for: .normal)
         signUpButton.isEnabled = authVM.formIsValid
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate
+
+// Image를 선택하기 위해 fix를 선택하면 SignUpController에 추가가 될 수 있지만 extension으로 따로 만들어 확장성있게? 따로 추가함
+extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    // 사용자가 원하는 모든(영상, 사진)을 가져올 수 있음
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let selectedImage = info[.editedImage] as? UIImage else { return }
+        profileImage = selectedImage
+        addProfilePhotoButton.contentMode = .scaleAspectFill
+        addProfilePhotoButton.clipsToBounds = true // clipseToBounds란?
+        addProfilePhotoButton.layer.cornerRadius = addProfilePhotoButton.frame.width / 2
+        addProfilePhotoButton.layer.masksToBounds = true // masksToBounds란?
+        addProfilePhotoButton.layer.borderColor = UIColor.yellow.cgColor
+        addProfilePhotoButton.layer.borderWidth = 2
+        addProfilePhotoButton.setImage(selectedImage.withRenderingMode(.alwaysOriginal), for: .normal)
+        
+        // 선택 후 사라진다
+        self.dismiss(animated: true, completion: nil)
     }
 }
