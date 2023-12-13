@@ -20,6 +20,7 @@
 		CD7BFD942AFBC87F00339E2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD7BFD932AFBC87F00339E2B /* Assets.xcassets */; };
 		CD7BFD972AFBC87F00339E2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD7BFD952AFBC87F00339E2B /* LaunchScreen.storyboard */; };
 		CD8A9FF62B29D72700E69D63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD8A9FF52B29D72700E69D63 /* GoogleService-Info.plist */; };
+		CD97927A2B29E7780088C042 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9792792B29E7780088C042 /* User.swift */; };
 		CD98C75F2B011C6600EEA27F /* MainTabBarContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98C75E2B011C6600EEA27F /* MainTabBarContoller.swift */; };
 		CD98C7612B0251C000EEA27F /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98C7602B0251C000EEA27F /* FeedController.swift */; };
 		CD98C7632B0251D600EEA27F /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98C7622B0251D600EEA27F /* NotificationController.swift */; };
@@ -47,6 +48,7 @@
 		CD7BFD962AFBC87F00339E2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD7BFD982AFBC87F00339E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD8A9FF52B29D72700E69D63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		CD9792792B29E7780088C042 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CD98C75E2B011C6600EEA27F /* MainTabBarContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarContoller.swift; sourceTree = "<group>"; };
 		CD98C7602B0251C000EEA27F /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		CD98C7622B0251D600EEA27F /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
@@ -82,7 +84,6 @@
 				6414CD50EACE2A8988A859B9 /* Pods-SocialApp.debug.xcconfig */,
 				B3A77526938510DC717983DD /* Pods-SocialApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -146,6 +147,7 @@
 		CD98C7582B011B3000EEA27F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CD9792792B29E7780088C042 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -315,6 +317,7 @@
 				CD5420582B0CF45A00AEEC39 /* SignUpController.swift in Sources */,
 				CD5420562B0CF43D00AEEC39 /* LoginViewController.swift in Sources */,
 				CD98C7632B0251D600EEA27F /* NotificationController.swift in Sources */,
+				CD97927A2B29E7780088C042 /* User.swift in Sources */,
 				CD7BFD8F2AFBC87E00339E2B /* ViewController.swift in Sources */,
 				CD7BFD8B2AFBC87E00339E2B /* AppDelegate.swift in Sources */,
 				CDB403552B20B0F00093508B /* AuthenticationViewModel.swift in Sources */,
