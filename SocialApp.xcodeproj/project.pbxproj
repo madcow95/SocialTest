@@ -28,6 +28,8 @@
 		CD98C7672B02522A00EEA27F /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98C7662B02522A00EEA27F /* SearchController.swift */; };
 		CD98C7692B02526E00EEA27F /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98C7682B02526E00EEA27F /* ProfileController.swift */; };
 		CDB403552B20B0F00093508B /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB403542B20B0F00093508B /* AuthenticationViewModel.swift */; };
+		CDEF30772B2B3A8F0011C296 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF30762B2B3A8F0011C296 /* ImageUploader.swift */; };
+		CDEF30792B2B3EC30011C296 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF30782B2B3EC30011C296 /* AuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		CD98C7662B02522A00EEA27F /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		CD98C7682B02526E00EEA27F /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		CDB403542B20B0F00093508B /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		CDEF30762B2B3A8F0011C296 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
+		CDEF30782B2B3EC30011C296 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,8 @@
 		CD98C75B2B011B5900EEA27F /* API */ = {
 			isa = PBXGroup;
 			children = (
+				CDEF30762B2B3A8F0011C296 /* ImageUploader.swift */,
+				CDEF30782B2B3EC30011C296 /* AuthService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -315,6 +321,8 @@
 			files = (
 				CD1C40962B133EDC00027C0E /* CustomTextField.swift in Sources */,
 				CD5420582B0CF45A00AEEC39 /* SignUpController.swift in Sources */,
+				CDEF30772B2B3A8F0011C296 /* ImageUploader.swift in Sources */,
+				CDEF30792B2B3EC30011C296 /* AuthService.swift in Sources */,
 				CD5420562B0CF43D00AEEC39 /* LoginViewController.swift in Sources */,
 				CD98C7632B0251D600EEA27F /* NotificationController.swift in Sources */,
 				CD97927A2B29E7780088C042 /* User.swift in Sources */,
