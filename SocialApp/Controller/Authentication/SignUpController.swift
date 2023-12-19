@@ -121,10 +121,19 @@ class SignUpViewController: UIViewController {
     }
     
     @objc func signUpAction() {
-        print("email >>> \(emailTextField.text!)")
-        print("password >>> \(passwordTextField.text!)")
-        print("full Name >>> \(fullNameTextField.text!)")
-        print("nick name >>> \(nickNameTextField.text!)")
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let fullName = fullNameTextField.text else { return }
+        guard let nickName = nickNameTextField.text else { return }
+        guard let profileImage = self.profileImage else { return }
+        
+        let credential = AuthCredentials(email: email, password: password, fullName: fullName, nickName: nickName, profileImage: profileImage)
+        
+        AuthService.registerUser(with: credential) { error in
+            print("ERROR: Fail to register user >> \(error.localizedDescription)")
+            return
+        }
+        print("DEBUG: Success register user")
     }
     
     @objc func returnToLoginView() {
