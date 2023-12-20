@@ -30,7 +30,7 @@ struct AuthService {
                 let data: [String: Any] = ["email": credential.email,
                                            "fullName": credential.fullName,
                                            "nickName": credential.nickName,
-                                           "profileImage": credential.profileImage]
+                                           "profileImage": imageUrl]
                 
                 Firestore.firestore().collection("users").document(uid).setData(data) { error in
                     if let error = error {

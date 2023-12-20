@@ -37,6 +37,7 @@ class SignUpViewController: UIViewController {
     private let passwordTextField: CustomTextField = {
         let pw = CustomTextField(placeHolder: "Password")
         pw.isSecureTextEntry = true
+//        pw.textContentType = .oneTimeCode
         
         return pw
     }()
@@ -126,7 +127,11 @@ class SignUpViewController: UIViewController {
         guard let fullName = fullNameTextField.text else { return }
         guard let nickName = nickNameTextField.text else { return }
         guard let profileImage = self.profileImage else { return }
-        
+        print("email >> \(email)")
+        print("password >> \(password)")
+        print("fullName >> \(fullName)")
+        print("nickName >> \(nickName)")
+        print("profileImage >> \(profileImage)")
         let credential = AuthCredentials(email: email, password: password, fullName: fullName, nickName: nickName, profileImage: profileImage)
         
         AuthService.registerUser(with: credential) { error in
