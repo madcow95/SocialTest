@@ -8,11 +8,25 @@
 
 import UIKit
 
-class ProfileController: ViewController {
+private let cellIdentifier = "ProfileCell"
+private let headerIdentifier = "ProfileHeader"
+
+class ProfileController: UICollectionViewController {
+    // MARK: - Properties
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        configure()
     }
+    
+    func configure() {
+        collectionView.backgroundColor = .blue
+//        collectionView.register(<#T##cellClass: AnyClass?##AnyClass?#>, forCellWithReuseIdentifier: <#T##String#>)
+    }
+    
+    // MARK: - Actions
+    
+    // MARK: - Helpers(Functions)
 }

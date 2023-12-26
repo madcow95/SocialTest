@@ -32,11 +32,11 @@ class FeedController: UICollectionViewController {
         
         // 23-11-15 UICollectionViewCell -> FeedCell로 수정
         collectionView.register(FeedCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        if Auth.auth().currentUser == nil {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Login", style: .plain, target: self, action: #selector(handleLogout))
-        } else {
+//        if Auth.auth().currentUser == nil {
+//            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Login", style: .plain, target: self, action: #selector(handleLogout))
+//        } else {
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
-        }
+//        }
     }
     
     // MARK: - Actions

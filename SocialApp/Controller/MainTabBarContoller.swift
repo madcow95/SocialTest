@@ -23,7 +23,7 @@ class MainTabBarContoller: UITabBarController {
         tabBar.backgroundColor = .white
         
         configureViewController()
-        checkIfUserLogin()
+//        checkIfUserLogin()
     }
     
     // MARK: - Helpers(기능구현할 함수)
@@ -38,7 +38,9 @@ class MainTabBarContoller: UITabBarController {
         let noty = tabBarNavigationController(unSelected: #imageLiteral(resourceName: "love"), selected: #imageLiteral(resourceName: "like_selected"), view: NotificationController(), title: "Notification")
         let imageSelector = tabBarNavigationController(unSelected: #imageLiteral(resourceName: "plus_unselected"), selected: #imageLiteral(resourceName: "add2"), view: ImageSelectionController(), title: "Image")
         let search = tabBarNavigationController(unSelected: #imageLiteral(resourceName: "search_unselected"), selected: #imageLiteral(resourceName: "search_selected"), view: SearchController(), title: "Search")
-        let profile = tabBarNavigationController(unSelected: #imageLiteral(resourceName: "profile_unselected"), selected: #imageLiteral(resourceName: "profile_selected"), view: ProfileController(), title: "Profile")
+        
+        let profileLayout = UICollectionViewFlowLayout()
+        let profile = tabBarNavigationController(unSelected: #imageLiteral(resourceName: "profile_unselected"), selected: #imageLiteral(resourceName: "profile_selected"), view: ProfileController(collectionViewLayout: profileLayout), title: "Profile")
         
         viewControllers = [feed, noty, imageSelector, search, profile]
     }

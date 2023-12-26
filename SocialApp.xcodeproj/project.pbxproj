@@ -13,6 +13,8 @@
 		CD532F752B03A53B001104FC /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD532F742B03A53B001104FC /* Extension.swift */; };
 		CD5420562B0CF43D00AEEC39 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5420552B0CF43D00AEEC39 /* LoginViewController.swift */; };
 		CD5420582B0CF45A00AEEC39 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5420572B0CF45A00AEEC39 /* SignUpController.swift */; };
+		CD72EBFD2B3B0EBE00D07844 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD72EBFC2B3B0EBE00D07844 /* ProfileCell.swift */; };
+		CD72EBFF2B3B0ECB00D07844 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD72EBFE2B3B0ECB00D07844 /* ProfileHeader.swift */; };
 		CD7BFD8B2AFBC87E00339E2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7BFD8A2AFBC87E00339E2B /* AppDelegate.swift */; };
 		CD7BFD8D2AFBC87E00339E2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7BFD8C2AFBC87E00339E2B /* SceneDelegate.swift */; };
 		CD7BFD8F2AFBC87E00339E2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7BFD8E2AFBC87E00339E2B /* ViewController.swift */; };
@@ -41,6 +43,8 @@
 		CD532F742B03A53B001104FC /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		CD5420552B0CF43D00AEEC39 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CD5420572B0CF45A00AEEC39 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		CD72EBFC2B3B0EBE00D07844 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		CD72EBFE2B3B0ECB00D07844 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		CD7BFD872AFBC87E00339E2B /* SocialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7BFD8A2AFBC87E00339E2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD7BFD8C2AFBC87E00339E2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				CD0495A52B04F360005AF87A /* FeedCell.swift */,
+				CD72EBFC2B3B0EBE00D07844 /* ProfileCell.swift */,
+				CD72EBFE2B3B0ECB00D07844 /* ProfileHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -327,6 +333,7 @@
 				CD98C7632B0251D600EEA27F /* NotificationController.swift in Sources */,
 				CD97927A2B29E7780088C042 /* User.swift in Sources */,
 				CD7BFD8F2AFBC87E00339E2B /* ViewController.swift in Sources */,
+				CD72EBFF2B3B0ECB00D07844 /* ProfileHeader.swift in Sources */,
 				CD7BFD8B2AFBC87E00339E2B /* AppDelegate.swift in Sources */,
 				CDB403552B20B0F00093508B /* AuthenticationViewModel.swift in Sources */,
 				CD98C7672B02522A00EEA27F /* SearchController.swift in Sources */,
@@ -334,6 +341,7 @@
 				CD98C7612B0251C000EEA27F /* FeedController.swift in Sources */,
 				CD532F752B03A53B001104FC /* Extension.swift in Sources */,
 				CD98C7692B02526E00EEA27F /* ProfileController.swift in Sources */,
+				CD72EBFD2B3B0EBE00D07844 /* ProfileCell.swift in Sources */,
 				CD7BFD8D2AFBC87E00339E2B /* SceneDelegate.swift in Sources */,
 				CD98C7652B0251F600EEA27F /* ImageSelectionController.swift in Sources */,
 				CD98C75F2B011C6600EEA27F /* MainTabBarContoller.swift in Sources */,
