@@ -13,6 +13,6 @@ class ProfileController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemPink
+        
     }
 }

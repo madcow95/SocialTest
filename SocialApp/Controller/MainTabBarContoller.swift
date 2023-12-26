@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 /*
      앱을 켰을 때 가장 먼저 보이는 화면
@@ -22,6 +23,7 @@ class MainTabBarContoller: UITabBarController {
         tabBar.backgroundColor = .white
         
         configureViewController()
+        checkIfUserLogin()
     }
     
     // MARK: - Helpers(기능구현할 함수)
@@ -50,6 +52,27 @@ class MainTabBarContoller: UITabBarController {
         nav.tabBarItem.title = title
         
         return nav
+    }
+    
+    // MARK: - API
+
+    func checkIfUserLogin() {
+        if Auth.auth().currentUser == nil {
+            DispatchQueue.main.async {
+                let controller = LoginViewController()
+                let navigation = UINavigationController(rootViewController: controller)
+                navigation.modalPresentationStyle = .fullScreen
+                self.present(navigation, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func logout() {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("ERROR DEBUG: Failed logOut")
+        }
     }
 }
 

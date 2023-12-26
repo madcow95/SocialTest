@@ -136,6 +136,18 @@ class LoginViewController: UIViewController {
     @objc func loginAction() {
         print("DEBUG: email >>> \(emailTextField.text!)")
         print("DEBUG: password >>> \(passwordTextField.text!)")
+        
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
+        AuthService.logUserIn(with: email, password: password) { Result, error in
+            if let error = error {
+                print("ERROR DEBUG: \(error.localizedDescription)")
+                return
+            }
+            
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @objc func textChanged(sender: UITextField) {

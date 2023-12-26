@@ -13,6 +13,7 @@
  */
 
 import UIKit
+import Firebase
 
 private let reuseIdentifier = "Cell"
 
@@ -31,8 +32,32 @@ class FeedController: UICollectionViewController {
         
         // 23-11-15 UICollectionViewCell -> FeedCell로 수정
         collectionView.register(FeedCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        if Auth.auth().currentUser == nil {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Login", style: .plain, target: self, action: #selector(handleLogout))
+        } else {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
+        }
     }
+    
+    // MARK: - Actions
+    @objc func handleLogout() {
+        do {
+            try Auth.auth().signOut()
+            let controller = LoginViewController()
+            let navigation = UINavigationController(rootViewController: controller)
+            navigation.modalPresentationStyle = .fullScreen
+            self.present(navigation, animated: true, completion: nil)
+        } catch {
+            print("ERROR DEBUG: Login Fail")
+        }
+    }
+    /*
+    @objc func handleLogin() {
+        
+    }
+    */
 }
+
 
 // MARK: UICollectionView DataSource
 extension FeedController {
