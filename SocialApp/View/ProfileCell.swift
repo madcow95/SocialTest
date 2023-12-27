@@ -14,6 +14,8 @@ class ProfileCell: UICollectionViewCell {
     // MARK: - LifeCycle
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        backgroundColor = .gray
     }
     
     required init?(coder: NSCoder) {
