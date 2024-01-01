@@ -22,7 +22,7 @@ class ProfileController: UICollectionViewController {
     }
     
     func configure() {
-        collectionView.backgroundColor = .blue
+        collectionView.backgroundColor = .white
         collectionView.register(ProfileCell.self, forCellWithReuseIdentifier: cellIdentifier)
         // Header or Footer를 가져올 때 유용하게 사용됨
         collectionView.register(ProfileHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerIdentifier)
@@ -53,6 +53,7 @@ extension ProfileController {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
+// Header Part
 extension ProfileController: UICollectionViewDelegateFlowLayout {
     // 단위: pixel?
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -70,6 +71,6 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        CGSize(width: view.frame.width, height: 250)
+        CGSize(width: view.frame.width, height: 220)
     }
 }
